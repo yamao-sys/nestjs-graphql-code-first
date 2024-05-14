@@ -5,6 +5,9 @@ NestJSのGraphQL(コードファースト)のキャッチアップリポジト�
 https://docs.nestjs.com/graphql/quick-start
 https://zenn.dev/youcangg/articles/33a8ff2accb774
 
+## GraphQL playground
+[http://localhost:8000/graphql](http://localhost:8000/graphql)
+
 ## コマンド類
 ### 開発環境の立ち上げ
 ```
