@@ -1,10 +1,6 @@
 # nestjs-graphql-code-first
 NestJSのGraphQL(コードファースト)のキャッチアップリポジトリ
 
-## TODO
-- NestJS(というよりもTypeORMかな)でデバッグモードでSQLログを見たい
-- @LoaderでBatch読み込み
-
 ## GraphQLのメリット
 - オーバーフェッチ・アンダーフェッチを防げる
 - 1回のリクエストで必要なデータを取ってこれる
@@ -47,8 +43,7 @@ NestJSのGraphQL(コードファースト)のキャッチアップリポジト�
 - Resolver, ObjectType, InputTypeの修正を自動でスキーマに反映してくれる
 
 ## NestJSのコードファーストのGraphQLでやりにくい(やりにくそうな)点
-- GraphQLのメリットの一つであるクライアント側で取得したいデータを指定できる作りができそうか？
-	- ObjectTypeに沿ってGraph構造に取ってくれる感じではなさそう...？
+- サービスクラスの方でN+1を防ぐように頑張る必要がある(これは他の言語でも同じだが...)
 
 ## 参考
 - https://docs.nestjs.com/graphql/quick-start
