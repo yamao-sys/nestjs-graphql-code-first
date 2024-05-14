@@ -16,7 +16,7 @@ docker-compose build
 docker-compose up
 ```
 
-### NestJSでresource(controller, service, module, entity)を一式作成する
+### NestJSでresource(resolver, service, module, entity)を一式作成する
 ```
 nest g resource [name]
 ```
