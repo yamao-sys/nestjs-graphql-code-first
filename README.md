@@ -42,8 +42,9 @@ NestJSのGraphQL(コードファースト)のキャッチアップリポジト�
 ## NestJSのコードファーストのGraphQLで開発しやすかった点
 - Resolver, ObjectType, InputTypeの修正を自動でスキーマに反映してくれる
 
-## NestJSのコードファーストのGraphQLでやりにくい(やりにくそうな)点
+## NestJSのコードファーストのGraphQLでやりにくい(やりにくそうな)点、注意ポイント
 - サービスクラスの方でN+1を防ぐように頑張る必要がある(これは他の言語でも同じだが...)
+- ObjectTypeとEntityは分けたほうが良さそう
 
 ## 参考
 - https://docs.nestjs.com/graphql/quick-start
