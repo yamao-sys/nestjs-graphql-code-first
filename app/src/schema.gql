@@ -1,0 +1,49 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Todo {
+  """todoのPrimary ID"""
+  id: Int!
+
+  """todoのtitle"""
+  title: String!
+
+  """todoのcontent"""
+  content: String!
+}
+
+type RemoveTodoType {
+  """todoのtitle"""
+  result: Boolean!
+}
+
+type Query {
+  todos: [Todo!]!
+  todo(id: Int!): Todo!
+}
+
+type Mutation {
+  createTodo(createTodoInput: CreateTodoInput!): Todo!
+  updateTodo(updateTodoInput: UpdateTodoInput!): Todo!
+  removeTodo(id: Int!): RemoveTodoType!
+}
+
+input CreateTodoInput {
+  """todoのtitle"""
+  title: String!
+
+  """todoのcontent"""
+  content: String!
+}
+
+input UpdateTodoInput {
+  """todoのtitle"""
+  title: String!
+
+  """todoのcontent"""
+  content: String!
+
+  """todoのid"""
+  id: Int!
+}
