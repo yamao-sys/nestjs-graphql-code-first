@@ -2,6 +2,17 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type SubTodo {
+  """sub_todoのPrimary ID"""
+  id: Int!
+
+  """sub_todoのtitle"""
+  title: String!
+
+  """sub_todoのcontent"""
+  content: String!
+}
+
 type Todo {
   """todoのPrimary ID"""
   id: Int!
@@ -18,9 +29,23 @@ type RemoveTodoType {
   result: Boolean!
 }
 
+type TodoType {
+  """todo id"""
+  id: Int!
+
+  """todo title"""
+  title: String!
+
+  """todo content"""
+  content: String!
+
+  """sub todo"""
+  subTodos: [SubTodo!]!
+}
+
 type Query {
   todos: [Todo!]!
-  todo(id: Int!): Todo!
+  todo(id: Int!): TodoType!
 }
 
 type Mutation {

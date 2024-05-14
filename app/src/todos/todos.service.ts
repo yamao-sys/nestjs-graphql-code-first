@@ -21,7 +21,12 @@ export class TodosService {
   }
 
   findOne(id: number) {
-    return this.todoRepository.findOneBy({ id });
+    return this.todoRepository.findOne({
+      where: { id },
+      loadEagerRelations: false,
+      relationLoadStrategy: 'query', // JOINせず個別にSQL発行
+      relations: ['subTodos'],
+    });
   }
 
   async update(id: number, updateTodoInput: UpdateTodoInput) {

@@ -4,6 +4,7 @@ import { Todo } from './entities/todo.entity';
 import { CreateTodoInput } from './dto/create-todo.input';
 import { UpdateTodoInput } from './dto/update-todo.input';
 import { RemoveTodoType } from './dto/object-type/remove-todo.type';
+import { TodoType } from './dto/object-type/todo-type';
 
 @Resolver(() => Todo)
 export class TodosResolver {
@@ -19,7 +20,7 @@ export class TodosResolver {
     return this.todosService.findAll();
   }
 
-  @Query(() => Todo, { name: 'todo' })
+  @Query(() => TodoType, { name: 'todo' })
   findOne(@Args('id', { type: () => Int }) id: number) {
     return this.todosService.findOne(id);
   }
