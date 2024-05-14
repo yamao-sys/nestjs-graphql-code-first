@@ -38,8 +38,6 @@ export class TodosService {
   findOne(id: number) {
     return this.todoRepository.findOne({
       where: { id },
-      loadEagerRelations: false,
-      relationLoadStrategy: 'query', // JOINせず個別にSQL発行
       relations: ['subTodos'],
     });
   }
