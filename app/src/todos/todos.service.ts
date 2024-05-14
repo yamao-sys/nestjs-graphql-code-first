@@ -17,7 +17,22 @@ export class TodosService {
   }
 
   findAll() {
-    return this.todoRepository.find();
+    // NOTE: JOINして条件指定したい場合などにqueryBuilderは有用
+    // return this.todoRepository
+    //   .createQueryBuilder('todo')
+    //   .leftJoinAndSelect('todo.subTodos', 'subTodos')
+    //   .where('subTodos.title = :title', { title: 'test title4' })
+    //   .getMany();
+
+    // NOTE: 単にJOINしたい場合はfindのrelationsオプションを使用(※1)
+    return this.todoRepository.find({
+      relations: ['subTodos'],
+    });
+    // NOTE: ※1は以下のようにも書ける
+    // return this.todoRepository
+    //   .createQueryBuilder('todo')
+    //   .leftJoinAndSelect('todo.subTodos', 'subTodos')
+    //   .getMany();
   }
 
   findOne(id: number) {

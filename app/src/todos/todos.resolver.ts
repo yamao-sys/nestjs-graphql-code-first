@@ -15,7 +15,7 @@ export class TodosResolver {
     return this.todosService.create(createTodoInput);
   }
 
-  @Query(() => [Todo], { name: 'todos' })
+  @Query(() => [TodoType], { name: 'todos' })
   findAll() {
     return this.todosService.findAll();
   }
