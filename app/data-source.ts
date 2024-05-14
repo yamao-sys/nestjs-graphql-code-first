@@ -12,7 +12,7 @@ export const datasourceOptions: DataSourceOptions = {
   migrations: [join(__dirname, '/migrations/*.{ts,js}')],
   synchronize: Boolean(JSON.parse(process.env.SYNCHRONIZE ?? 'false')),
   dropSchema: process.env.NODE_ENV === 'test',
-  logging: false,
+  logging: Boolean(JSON.parse(process.env.SQL_LOGGING ?? 'false')),
 };
 
 export const datasource = new DataSource(datasourceOptions);
