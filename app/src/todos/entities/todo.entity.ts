@@ -32,6 +32,8 @@ export class Todo extends BaseEntity {
   content!: string;
 
   // @Field(() => Array<SubTodo, { description: 'todoのsub todo' })
-  @OneToMany(() => SubTodo, (subTodo) => subTodo.todo)
+  @OneToMany(() => SubTodo, (subTodo) => subTodo.todo, {
+    cascade: true, // todoの保存時に一緒に保存する
+  })
   subTodos?: SubTodo[];
 }
