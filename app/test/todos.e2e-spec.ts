@@ -169,26 +169,6 @@ describe('AppController (e2e)', () => {
   });
 
   describe('Mutation createTodo()', () => {
-    beforeEach(async () => {
-      await todoRepository.save([
-        {
-          title: 'test title1',
-          content: 'test content1',
-          subTodos: [
-            {
-              title: 'test sub title1',
-              content: 'test sub content1',
-            },
-            {
-              title: 'test sub title2',
-              content: 'test sub content2',
-            },
-          ],
-        },
-        { title: 'test title2', content: 'test content2' },
-      ]);
-    });
-
     it('todoが作成できること', async () => {
       const { body } = await request(app.getHttpServer())
         .post('/graphql')
