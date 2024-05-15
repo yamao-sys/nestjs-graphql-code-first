@@ -29,9 +29,16 @@ jobs:
         working-directory: ./app
         run: npm install
 
-      - name: Run tests
+      - name: Run Unit tests
         working-directory: ./app
         env:
           IS_CI: true
         run: |
           npm run test
+      
+      - name: Run E2E tests
+        working-directory: ./app
+        env:
+          IS_CI: true
+        run: |
+          npm run test:e2e
