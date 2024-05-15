@@ -9,3 +9,8 @@ const testEnv = dotenv.config({
 Object.assign(process.env, {
   ...testEnv.parsed,
 });
+
+// CI環境の時はDB_HOSTをlocalhostに変更
+if (process.env?.IS_CI) {
+  process.env.DB_HOST = '127.0.0.1';
+}
