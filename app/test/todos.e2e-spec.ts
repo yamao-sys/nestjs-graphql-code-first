@@ -14,6 +14,7 @@ describe('AppController (e2e)', () => {
 
   beforeAll(async () => {
     await datasource.initialize();
+    await datasource.synchronize(true);
     todoRepository = datasource.getRepository(Todo);
   });
 
