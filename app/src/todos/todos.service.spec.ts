@@ -12,6 +12,7 @@ describe('TodosService', () => {
 
   beforeAll(async () => {
     await datasource.initialize();
+    await datasource.synchronize(true);
     todoRepository = datasource.getRepository(Todo);
   });
 

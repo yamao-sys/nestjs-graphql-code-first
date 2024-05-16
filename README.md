@@ -75,3 +75,13 @@ npx ts-node ./node_modules/.bin/typeorm migration:generate -d ./data-source.ts .
 ```
 npx ts-node ./node_modules/.bin/typeorm migration:run -d ./data-source.ts
 ```
+
+### 単体テストの実行
+```
+npm run test
+```
+
+### E2Eテストの実行
+```
+npm run test:e2e
+```
